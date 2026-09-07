@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wireframe → Static Page (Week 1)</title>
+  <meta name="description" content="A responsive static webpage built from a wireframe concept using semantic HTML + CSS." />
+
+  <!-- Tailwind CDN (required) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-slate-900 antialiased">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="top">
+    <div class="container">
+      <div class="header-row">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <span class="brand-mark" aria-hidden="true">▦</span>
+          <span class="brand-name">WireframeCo</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button id="menuBtn" class="menu-btn" aria-controls="mobileMenu" aria-expanded="false">
+            <span class="sr-only">Toggle menu</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+
+          <ul class="nav-list" id="desktopNav">
+            <li><a class="nav-link" href="#features">Features</a></li>
+            <li><a class="nav-link" href="#how">How it works</a></li>
+            <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li><a class="nav-link" href="#faq">FAQ</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a class="btn btn-ghost" href="#pricing">View plans</a>
+            <a class="btn btn-primary" href="#contact">Get started</a>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Mobile menu (collapsible) -->
+      <div id="mobileMenu" class="mobile-menu" hidden>
+        <ul class="mobile-list" aria-label="Mobile">
+          <li><a class="mobile-link" href="#features">Features</a></li>
+          <li><a class="mobile-link" href="#how">How it works</a></li>
+          <li><a class="mobile-link" href="#pricing">Pricing</a></li>
+          <li><a class="mobile-link" href="#faq">FAQ</a></li>
+          <li class="mobile-actions">
+            <a class="btn btn-ghost w-full" href="#pricing">View plans</a>
+            <a class="btn btn-primary w-full" href="#contact">Get started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Week 1 • Static Layout Implementation</p>
+            <h1 class="hero-title">Transform wireframes into clean, responsive web pages.</h1>
+            <p class="hero-subtitle">This sample page demonstrates a typical wireframe-to-code workflow: semantic structure, consistent spacing, and responsive grids—plus small UI interactions.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#features">Explore layout</a>
+              <a class="btn btn-ghost" href="#faq">See FAQ</a>
+            </div>
+
+            <dl class="hero-metrics" aria-label="Project metrics">
+              <div class="metric">
+                <dt class="metric-k">Sections</dt>
+                <dd class="metric-v">6+</dd>
+              </div>
+              <div class="metric">
+                <dt class="metric-k">Breakpoints</dt>
+                <dd class="metric-v">Mobile / Tablet / Desktop</dd>
+              </div>
+              <div class="metric">
+                <dt class="metric-k">Approach</dt>
+                <dd class="metric-v">Grid + Flex + Media queries</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-card" aria-label="Preview card">
+            <div class="preview">
+              <div class="preview-top">
+                <div class="dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="preview-label">layout-preview.html</span>
+              </div>
+              <div class="preview-body">
+                <div class="skeleton">
+                  <div class="sk-line w-2/3"></div>
+                  <div class="sk-line w-1/2"></div>
+                  <div class="sk-line w-full"></div>
+                  <div class="sk-grid">
+                    <div class="sk-card"></div>
+                    <div class="sk-card"></div>
+                    <div class="sk-card"></div>
+                  </div>
+                  <div class="sk-line w-5/6"></div>
+                  <div class="sk-line w-3/4"></div>
+                </div>
+              </div>
+              <div class="preview-foot">
+                <span class="badge">Responsive</span>
+                <span class="badge badge-muted">Accessible</span>
+                <span class="badge badge-muted">Semantic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Key layout elements from a wireframe</h2>
+          <p class="section-subtitle">Most wireframes resolve into a few repeatable patterns: header/navigation, hero, card grids, two-column content, and a clear footer.</p>
+        </header>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">◎</div>
+            <h3 class="card-title">Semantic structure</h3>
+            <p class="card-text">Uses <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> to reflect hierarchy and improve accessibility.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">▤</div>
+            <h3 class="card-title">Consistent spacing</h3>
+            <p class="card-text">A shared container width and vertical rhythm keeps the page “wireframe-accurate” even as content changes.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">↔</div>
+            <h3 class="card-title">Responsive grids</h3>
+            <p class="card-text">Card layouts collapse cleanly on smaller screens and expand on desktop using CSS grid and targeted breakpoints.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section section-alt">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <header class="section-head compact">
+              <h2 class="section-title">A simple workflow</h2>
+              <p class="section-subtitle">Translate wireframes by locking down layout before polish: structure → spacing → typography → components → responsiveness.</p>
+            </header>
+
+            <ol class="steps" aria-label="Implementation steps">
+              <li class="step">
+                <div class="step-num">1</div>
+                <div>
+                  <h3 class="step-title">Map sections</h3>
+                  <p class="step-text">Identify the major blocks: header, hero, feature grid, content, and footer. Keep a clear reading order.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-num">2</div>
+                <div>
+                  <h3 class="step-title">Build layout primitives</h3>
+                  <p class="step-text">Create a container, define grid/flex patterns, then reuse those across sections instead of reinventing each block.</p>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-num">3</div>
+                <div>
+                  <h3 class="step-title">Add responsive behavior</h3>
+                  <p class="step-text">Start mobile-first; add breakpoints for tablet/desktop. Test by resizing and checking spacing/line-length.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <aside class="note" aria-label="Design notes">
+            <h3 class="note-title">Wireframe notes</h3>
+            <ul class="note-list">
+              <li>Buttons share consistent height and radius.</li>
+              <li>Typography uses a single scale (title / subtitle / body).</li>
+              <li>Cards have a subtle border and hover state.</li>
+              <li>Navigation collapses to a hamburger menu on mobile.</li>
+            </ul>
+            <div class="note-divider" aria-hidden="true"></div>
+            <p class="note-foot">Tip: Build the layout with grayscale first; add color once spacing is correct.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Designed for clarity</h2>
+          <p class="section-subtitle">These quotes are placeholders, but they show common wireframe patterns: avatar + text + meta in a card grid.</p>
+        </header>
+
+        <div class="grid-3">
+          <figure class="card quote">
+            <blockquote class="quote-text">“The spacing system made the layout feel consistent across every section.”</blockquote>
+            <figcaption class="quote-meta">
+              <span class="avatar" aria-hidden="true">AL</span>
+              <div>
+                <div class="quote-name">A. Lee</div>
+                <div class="quote-role">UI Intern</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card quote">
+            <blockquote class="quote-text">“The mobile menu and FAQ accordion are small touches that improve usability without changing the wireframe.”</blockquote>
+            <figcaption class="quote-meta">
+              <span class="avatar" aria-hidden="true">RS</span>
+              <div>
+                <div class="quote-name">R. Singh</div>
+                <div class="quote-role">Frontend Mentor</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card quote">
+            <blockquote class="quote-text">“Grid + semantic HTML made it easy to iterate when requirements changed.”</blockquote>
+            <figcaption class="quote-meta">
+              <span class="avatar" aria-hidden="true">JM</span>
+              <div>
+                <div class="quote-name">J. Morales</div>
+                <div class="quote-role">Product Designer</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Pricing (wireframe card layout)</h2>
+          <p class="section-subtitle">A typical 3-up card layout with a “featured” middle option. Swap text to match your wireframe.</p>
+        </header>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <header class="price-head">
+              <h3 class="price-title">Starter</h3>
+              <p class="price-sub">For practice projects</p>
+            </header>
+            <div class="price-value">
+              <span class="price-amount">$0</span>
+              <span class="price-period">/ mo</span>
+            </div>
+            <ul class="price-list">
+              <li>1 page layout</li>
+              <li>Responsive grid</li>
+              <li>Basic components</li>
+            </ul>
+            <a class="btn btn-ghost w-full" href="#contact">Choose Starter</a>
+          </article>
+
+          <article class="price-card featured" aria-label="Most popular plan">
+            <header class="price-head">
+              <div class="pill" aria-hidden="true">Most popular</div>
+              <h3 class="price-title">Pro</h3>
+              <p class="price-sub">For portfolio-ready builds</p>
+            </header>
+            <div class="price-value">
+              <span class="price-amount">$12</span>
+              <span class="price-period">/ mo</span>
+            </div>
+            <ul class="price-list">
+              <li>Reusable layout system</li>
+              <li>Accessibility checks</li>
+              <li>Documentation report</li>
+            </ul>
+            <a class="btn btn-primary w-full" href="#contact">Choose Pro</a>
+          </article>
+
+          <article class="price-card">
+            <header class="price-head">
+              <h3 class="price-title">Team</h3>
+              <p class="price-sub">For review and iteration</p>
+            </header>
+            <div class="price-value">
+              <span class="price-amount">$29</span>
+              <span class="price-period">/ mo</span>
+            </div>
+            <ul class="price-list">
+              <li>Design tokens</li>
+              <li>Component checklist</li>
+              <li>Multiple breakpoints</li>
+            </ul>
+            <a class="btn btn-ghost w-full" href="#contact">Choose Team</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-subtitle">An accordion is a common wireframe pattern. It’s implemented with accessible buttons and a tiny bit of JavaScript.</p>
+        </header>
+
+        <div class="faq" role="region" aria-label="Frequently asked questions">
+          <div class="faq-item">
+            <h3 class="faq-q">
+              <button class="faq-btn" aria-expanded="false">
+                What if my wireframe differs from this layout?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-a" hidden>
+              <p>Swap sections and components as needed. The goal is to keep a reusable layout system: container, grid, cards, typography, and spacing tokens.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-q">
+              <button class="faq-btn" aria-expanded="false">
+                Where do media queries belong?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-a" hidden>
+              <p>Place them near the components they affect (in <code>style.css</code>) or group them by breakpoint. This example keeps breakpoints compact and component-focused.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-q">
+              <button class="faq-btn" aria-expanded="false">
+                How do I check “pixel-perfect” accuracy?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-a" hidden>
+              <p>Use a browser overlay tool, compare spacing in consistent increments, and verify typography (font sizes, line heights) and alignment across breakpoints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <div>
+          <div class="footer-brand">WireframeCo</div>
+          <p class="footer-text">A sample static page demonstrating wireframe-to-code fundamentals.</p>
+        </div>
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#top">Top</a>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="report.md" target="_blank" rel="noreferrer">Open report</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> WireframeCo</span>
+        <span class="footer-meta">Built with HTML + CSS + a tiny bit of JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function setMenu(open) {
+      menuBtn.setAttribute('aria-expanded', String(open));
+      mobileMenu.hidden = !open;
+      document.body.classList.toggle('menu-open', open);
+    }
+
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') !== 'true';
+      setMenu(open);
+    });
+
+    // Close mobile menu on link click
+    mobileMenu?.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      setMenu(false);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const panel = item?.querySelector('.faq-a');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // close others (wireframe-style single-open)
+        document.querySelectorAll('.faq-item').forEach((it) => {
+          const b = it.querySelector('.faq-btn');
+          const p = it.querySelector('.faq-a');
+          if (b && p) {
+            b.setAttribute('aria-expanded', 'false');
+            p.hidden = true;
+          }
+        });
+
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (panel) panel.hidden = expanded;
+      });
+    });
+
+    // Demo form submit
+    const submitBtn = document.getElementById('submitBtn');
+    const formHelp = document.getElementById('formHelp');
+    submitBtn?.addEventListener('click', () => {
+      const email = document.getElementById('email');
+      if (email && !email.checkValidity()) {
+        formHelp.textContent = 'Please enter a valid email to continue.';
+        return;
+      }
+      formHelp.textContent = 'Submitted (demo). In a static page, wire this up later.';
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = String(new Date().getFullYear());
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const el = document.querySelector(href);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', href);
+      });
+    });
+  </script>
+</body>
+</html>
